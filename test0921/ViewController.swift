@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var zhangmanyu: UIButton!
     @IBOutlet weak var display: UITextField!
     var re = 0
+    var add = 0
+    var result = ""
     @IBAction func one(_ sender: Any) {
         if re == 1{
             display.text = "1"
@@ -95,7 +97,14 @@ class ViewController: UIViewController {
     }
     
     @IBAction func add(_ sender: Any) {
-        
+        if add == 1{
+            let a = Double(result)!
+            let b = Double(display.text!)!
+            let c = a + b
+            result = String(c)
+            display.text = ""
+            
+        }
         
     }
     
@@ -127,7 +136,6 @@ class ViewController: UIViewController {
     
     @IBAction func dot(_ sender: Any) {
         display.text = display.text! + "."
-        //judge = 1
     }
     
     @IBAction func ac(_ sender: Any) {
