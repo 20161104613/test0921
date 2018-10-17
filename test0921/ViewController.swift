@@ -14,7 +14,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var display: UITextField!
     var re = 0
     var add = 0
+    var min = 0
+    var mul = 0
+    var div = 0
+    var judge = 0
     var result = ""
+    var number = 0
     @IBAction func one(_ sender: Any) {
         if re == 1{
             display.text = "1"
@@ -103,7 +108,21 @@ class ViewController: UIViewController {
             let c = a + b
             result = String(c)
             display.text = ""
+            number = 1
+            re = 1
             
+        }
+        else{
+            if result ==  ""{
+                result = "0"
+            }
+            else{
+                let x = Double(result)!
+                result = String(x)
+                display.text = ""
+                number = 1
+                re = 0
+            }
         }
         
     }
@@ -118,24 +137,108 @@ class ViewController: UIViewController {
     }
     
     @IBAction func minus(_ sender: Any) {
+        if min == 1{
+            let a = Double(result)!
+            let b = Double(display.text!)!
+            let c = a - b
+            result = String(c)
+            display.text = ""
+            number = 2
+            re = 1
+            
+        }
+        else{
+            if result ==  ""{
+                result = "0"
+            }
+            else{
+                let x = Double(result)!
+                result = String(x)
+                display.text = ""
+                number = 2
+                re = 0
+            }
+        }
     }
     
     
     @IBAction func multiply(_ sender: Any) {
+        if mul == 1{
+            let a = Double(result)!
+            let b = Double(display.text!)!
+            let c = a * b
+            result = String(c)
+            display.text = ""
+            number = 3
+            re = 1
+            
+        }
+        else{
+            if result ==  ""{
+                result = "0"
+            }
+            else{
+                let x = Double(result)!
+                result = String(x)
+                display.text = ""
+                number = 3
+                re = 0
+            }
+        }
     }
     
     @IBAction func divide(_ sender: Any) {
+        if div == 1{
+            let a = Double(result)!
+            let b = Double(display.text!)!
+            let c = a / b
+            result = String(c)
+            display.text = ""
+            number = 4
+            re = 1
+            
+        }
+        else{
+            if result ==  ""{
+                result = "0"
+            }
+            else{
+                let x = Double(result)!
+                result = String(x)
+                display.text = ""
+                number = 4
+                re = 0
+            }
+        }
     }
     
     @IBAction func equal(_ sender: Any) {
         //if (number1 != 0) && (number2 != 0) && (fuhao != ""){
             //switch
-        //
+        let a = Double(result)!
+        let b = Double(display.text!)!
+        if number == 1 {
+            let c = a + b
+            display.text = String(c)
+        }
+        else if number == 2 {
+            let c = a - b
+            display.text = String(c)
+        }
+        else if number == 3 {
+            let c = a * b
+            display.text = String(c)
+        }
+        else if number == 4 {
+            let c = a / (b)
+            display.text = String(c)
+        }
     }
     
     
     @IBAction func dot(_ sender: Any) {
         display.text = display.text! + "."
+        judge = 1
     }
     
     @IBAction func ac(_ sender: Any) {
