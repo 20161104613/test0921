@@ -113,11 +113,12 @@ class ViewController: UIViewController {
             
         }
         else{
-            if result ==  ""{
-                result = "0"
+            if display.text ==  ""{
+                display.text = ""
             }
             else{
-                let x = Double(result)!
+                add = 1
+                let x = Double(display.text!)!
                 result = String(x)
                 display.text = ""
                 number = 1
@@ -148,11 +149,11 @@ class ViewController: UIViewController {
             
         }
         else{
-            if result ==  ""{
-                result = "0"
+            if display.text ==  ""{
+                display.text = ""
             }
             else{
-                let x = Double(result)!
+                let x = Double(display.text!)!
                 result = String(x)
                 display.text = ""
                 number = 2
@@ -174,11 +175,11 @@ class ViewController: UIViewController {
             
         }
         else{
-            if result ==  ""{
-                result = "0"
+            if display.text ==  ""{
+                display.text = ""
             }
             else{
-                let x = Double(result)!
+                let x = Double(display.text!)!
                 result = String(x)
                 display.text = ""
                 number = 3
@@ -199,11 +200,11 @@ class ViewController: UIViewController {
             
         }
         else{
-            if result ==  ""{
-                result = "0"
+            if display.text ==  ""{
+                display.text = ""
             }
             else{
-                let x = Double(result)!
+                let x = Double(display.text!)!
                 result = String(x)
                 display.text = ""
                 number = 4
