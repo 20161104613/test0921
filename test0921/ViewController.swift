@@ -9,8 +9,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    @IBOutlet weak var zhangmanyu: UIButton!
     @IBOutlet weak var display: UITextField!
     var re = 0
     var add = 0
@@ -244,6 +242,10 @@ class ViewController: UIViewController {
     
     @IBAction func ac(_ sender: Any) {
         display.text = " "
+        add = 0
+        min = 0
+        mul = 0
+        div = 0
     }
     override func viewDidLoad() {
         super.viewDidLoad()
