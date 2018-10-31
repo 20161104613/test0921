@@ -18,6 +18,8 @@ class ViewController: UIViewController {
     var judge = 0
     var result = ""
     var number = 0
+    var count = 0
+    var count2 = 0
     @IBAction func one(_ sender: Any) {
         if re == 1{
             display.text = "1"
@@ -108,7 +110,7 @@ class ViewController: UIViewController {
             display.text = ""
             number = 1
             re = 1
-            
+            judge = 0
         }
         else{
             if display.text ==  ""{
@@ -121,6 +123,7 @@ class ViewController: UIViewController {
                 display.text = ""
                 number = 1
                 re = 0
+                judge = 0
             }
         }
         
@@ -144,6 +147,7 @@ class ViewController: UIViewController {
             display.text = ""
             number = 2
             re = 1
+            judge = 0
             
         }
         else{
@@ -156,6 +160,7 @@ class ViewController: UIViewController {
                 display.text = ""
                 number = 2
                 re = 0
+                judge = 0
             }
         }
     }
@@ -170,7 +175,7 @@ class ViewController: UIViewController {
             display.text = ""
             number = 3
             re = 1
-            
+            judge = 0
         }
         else{
             if display.text ==  ""{
@@ -182,6 +187,7 @@ class ViewController: UIViewController {
                 display.text = ""
                 number = 3
                 re = 0
+                judge = 0
             }
         }
     }
@@ -195,7 +201,7 @@ class ViewController: UIViewController {
             display.text = ""
             number = 4
             re = 1
-            
+            judge = 0
         }
         else{
             if display.text ==  ""{
@@ -207,6 +213,7 @@ class ViewController: UIViewController {
                 display.text = ""
                 number = 4
                 re = 0
+                judge = 0
             }
         }
     }
@@ -232,20 +239,47 @@ class ViewController: UIViewController {
             let c = a / (b)
             display.text = String(c)
         }
-    }
-    
-    
-    @IBAction func dot(_ sender: Any) {
-        display.text = display.text! + "."
-        judge = 1
-    }
-    
-    @IBAction func ac(_ sender: Any) {
-        display.text = " "
+        re = 1
+        judge = 0
         add = 0
         min = 0
         mul = 0
         div = 0
+    }
+    
+    
+    @IBAction func dot(_ sender: Any) {
+        
+        
+          display.text = display.text! + "."
+        
+        judge = 1
+     
+    }
+    
+    @IBAction func percent(_ sender: Any) {
+        let count = Double(display.text!)!
+        let count2 = count * 0.01
+        display.text = String(count2)
+        re = 0
+         judge = 0
+    }
+    
+    @IBAction func sign(_ sender: Any) {
+        let count = Double(display.text!)!
+        let count2 = -count
+        display.text = String(count2)
+        re = 0
+         judge = 0
+    }
+    
+    @IBAction func ac(_ sender: Any) {
+        display.text = ""
+        add = 0
+        min = 0
+        mul = 0
+        div = 0
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
