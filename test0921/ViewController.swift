@@ -250,9 +250,9 @@ class ViewController: UIViewController {
     
     @IBAction func dot(_ sender: Any) {
         
-        
+        if judge == 0 {
           display.text = display.text! + "."
-        
+        }
         judge = 1
      
     }
@@ -275,11 +275,12 @@ class ViewController: UIViewController {
     
     @IBAction func ac(_ sender: Any) {
         display.text = ""
+        re = 0
         add = 0
         min = 0
         mul = 0
         div = 0
-        
+        judge = 0
     }
     override func viewDidLoad() {
         super.viewDidLoad()
