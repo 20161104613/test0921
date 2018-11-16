@@ -219,8 +219,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func equal(_ sender: Any) {
-        //if (number1 != 0) && (number2 != 0) && (fuhao != ""){
-            //switch
         let a = Double(result)!
         let b = Double(display.text!)!
         if number == 1 {
@@ -238,6 +236,9 @@ class ViewController: UIViewController {
         else if number == 4 {
             let c = a / (b)
             display.text = String(c)
+        }
+        if b == 0 && number == 4{
+            display.text = "错误"
         }
         re = 1
         judge = 0
