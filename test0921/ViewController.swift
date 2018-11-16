@@ -102,6 +102,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func add(_ sender: Any) {
+        //display.text = "+"
         if add == 1{
             let a = Double(result)!
             let b = Double(display.text!)!
@@ -139,6 +140,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func minus(_ sender: Any) {
+        judge = 0
         if min == 1{
             let a = Double(result)!
             let b = Double(display.text!)!
@@ -147,26 +149,25 @@ class ViewController: UIViewController {
             display.text = ""
             number = 2
             re = 1
-            judge = 0
-            
-        }
+            }
         else{
             if display.text ==  ""{
                 display.text = ""
             }
             else{
+                min = 1
                 let x = Double(display.text!)!
                 result = String(x)
                 display.text = ""
                 number = 2
                 re = 0
-                judge = 0
             }
         }
     }
     
     
     @IBAction func multiply(_ sender: Any) {
+        judge = 0
         if mul == 1{
             let a = Double(result)!
             let b = Double(display.text!)!
@@ -182,18 +183,20 @@ class ViewController: UIViewController {
                 display.text = ""
             }
             else{
+                mul = 1
                 let x = Double(display.text!)!
                 result = String(x)
                 display.text = ""
                 number = 3
                 re = 0
-                judge = 0
             }
         }
     }
     
     @IBAction func divide(_ sender: Any) {
+        judge = 0
         if div == 1{
+           
             let a = Double(result)!
             let b = Double(display.text!)!
             let c = a / b
@@ -201,19 +204,18 @@ class ViewController: UIViewController {
             display.text = ""
             number = 4
             re = 1
-            judge = 0
         }
         else{
             if display.text ==  ""{
                 display.text = ""
             }
             else{
+                div = 1
                 let x = Double(display.text!)!
                 result = String(x)
                 display.text = ""
                 number = 4
                 re = 0
-                judge = 0
             }
         }
     }
@@ -255,7 +257,6 @@ class ViewController: UIViewController {
           display.text = display.text! + "."
         }
         judge = 1
-     
     }
     
     @IBAction func percent(_ sender: Any) {
